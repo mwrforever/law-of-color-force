@@ -65,6 +65,17 @@ export function netVerticalAccel(p: ColorPhysicsProfile): number {
   return p.buoyancyAccel - p.gravityMultiplier * PHYS.G;
 }
 
+/**
+ * 自染有效时长（纯函数，不依赖引擎）：紫(PURPLE)定身封顶 FREEZE_CAP，其余封顶 SELF_DYE_DURATION。
+ * 供 SelfDyeController 取实际生效时长，避免外部重复硬编码上限。
+ */
+export function effectiveDyeDuration(state: ColorState, requested: number): number {
+  if (state === 'PURPLE') {
+    return Math.min(requested, PHYS.FREEZE_CAP);
+  }
+  return Math.min(requested, PHYS.SELF_DYE_DURATION);
+}
+
 /** 由状态取渲染主色（Toon 材质 tint，GDD §7.5）。此处给归一化 RGB 基准，具体色值在美术阶段调。 */
 export function stateToRGB(state: ColorState): Vec3 {
   switch (state) {
