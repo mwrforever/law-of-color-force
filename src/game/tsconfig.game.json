@@ -1,0 +1,15 @@
+{
+  "//comment": "《色力法则》游戏模块专用 tsconfig（可选）。本文件只声明编译选项，不引入完整 Cocos 工程骨架。要真正编译/类型检查，必须把本目录放入一个 Cocos Creator 3.x 工程（引擎会提供 'cc' 模块的类型声明与 @ccclass/@property 装饰器运行时）。独立 tsc 因无法解析 'cc' 会报模块缺失——属预期，进入 Cocos 工程后消失。",
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "lib": ["ES2020", "DOM"]
+  },
+  "include": ["./**/*.ts"]
+}

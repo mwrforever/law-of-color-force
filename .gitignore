@@ -1,0 +1,21 @@
+# WorkBuddy internal memory/logs (not project source)
+.workbuddy/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cocos Creator local caches
+library/
+temp/
+local/
+build/
+profiles/
+settings/
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
